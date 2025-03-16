@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Spotify Furigana",
+  "version": "0.1",
+  "description": "Adds furigana to Japanese lyrics on Spotify.",
+  "permissions": ["scripting"],
+  "host_permissions": ["https://open.spotify.com/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["dict/*"],
+      "matches": ["https://open.spotify.com/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://open.spotify.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
